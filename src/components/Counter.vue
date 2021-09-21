@@ -2,7 +2,7 @@
 <h1>Counter</h1>
 	<div>
 	<h1>{{ counter }}</h1>	
-		<button @click="counter--" >-</button>
+		<button @click="decrement()" >-</button>
 		<button @click="counter++" >+</button> 
 	</div>
 </template>
@@ -12,9 +12,14 @@ export default {
 	name: "Counter",
 	data() {
 		return {
-			counter: 0,
-		};
+			counter: 0,};
 	},
+	methods: {
+		decrement(){
+           if(this.counter < 1) return
+           this.counter--
+		}
+	}
 };
 </script>
 
